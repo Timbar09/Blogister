@@ -125,8 +125,6 @@ To run the project, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Validations and Model specs**
-- [ ] **Validations and Model specs.**
 - [ ] **Setup and controllers.**
 - [ ] **Controllers specs.**
 - [ ] **Views.**
