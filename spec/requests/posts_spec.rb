@@ -23,5 +23,24 @@ RSpec.describe 'Posts', type: :request do
         expect(response.body).to include('A list of posts by a given user')
       end
     end
+
+    describe '/posts#show' do
+      before :each do
+        @post = Post.create(title: 'The Streak', text: 'The Streak is over!', author: @taker)
+        get user_post_path(@taker, @post)
+      end
+
+      it 'should return a successful response' do
+        expect(response).to have_http_status(200)
+      end
+
+      it 'should render the show template' do
+        expect(response).to render_template(:show)
+      end
+
+      it 'should include the placeholder text' do
+        expect(response.body).to include('Post details')
+      end
+    end
   end
 end
