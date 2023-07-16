@@ -18,8 +18,10 @@
       <% end %>
     <% end %>
   </ul>
-
-  <div class='post_cta'>
-    <%=render 'shared/buttons', btnName: 'See all posts', btnClass: 'btn btn_cta', btnPath: user_posts_path(@user) %>
-  </div>
+  
+  <% if @user.posts_counter.positive? %>
+    <div class='post_cta'>
+        <%=render 'shared/buttons', btnName: 'See all posts', btnClass: 'btn btn_cta', btnPath: user_posts_path(@user) %>
+    </div>
+  <% end %>
 </div>
