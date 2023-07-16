@@ -7,7 +7,9 @@
     <p class="user_empty-message">No users yet!</p>
   <% else %>
     <% @users.each do |user| %>
-      <%= render 'shared/user_card', user: user %>
+      <li>
+        <%= render 'shared/user_card', user: user %> 
+      </li>
     <% end %>
   <% end %>
 </ul>
