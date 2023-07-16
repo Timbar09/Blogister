@@ -11,11 +11,15 @@
     <% if @user.posts.empty? %>
       <p class='user_empty-message'>No posts yet!</p>
     <% else %>
-      <% @user.posts.each do |post| %>
+      <% @user.three_recent_posts.each do |post| %>
         <li>
           <%= render 'shared/post_card', post: post %>
         </li>
       <% end %>
     <% end %>
   </ul>
+
+  <div class='post_cta'>
+    <%=render 'shared/buttons', btnName: 'See all posts', btnClass: 'btn btn_cta', btnPath: user_posts_path(@user) %>
+  </div>
 </div>
