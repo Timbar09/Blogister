@@ -1,0 +1,27 @@
+.post {
+  &_card {
+    padding: 1rem;
+    border: solid 1px var(--light-grey);
+    border-radius: 0.25rem;
+    background-color: var(--very-light-grey);
+
+    h3 {
+      font-weight: 500;
+      padding-bottom: 0.5rem;
+    }
+
+    &_text {
+      margin: 0;
+      padding: 0.5rem;
+      border-top: solid 1px var(--light-grey);
+      border-bottom: solid 1px var(--light-grey);
+    }
+
+    &_counters {
+      margin: 0;
+      padding-top: 0.5rem;
+      font-size: 0.85rem;
+      text-align: right;
+    }
+  }
+}

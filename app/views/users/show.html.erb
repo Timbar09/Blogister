@@ -6,4 +6,16 @@
       <p><%= @user.bio %></p>
     </div>
   </div>
+
+  <ul class='post_list'>
+    <% if @user.posts.empty? %>
+      <p class='user_empty-message'>No posts yet!</p>
+    <% else %>
+      <% @user.posts.each do |post| %>
+        <li>
+          <%= render 'shared/post_card', post: post %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
 </div>
