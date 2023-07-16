@@ -12,7 +12,7 @@
     <p class='comment_empty-message'>No comments yet!</p>
   <% else %>
     <% @post.comments.each do |comment| %>
-      <li>
+      <li class='post_comment_list_item'>
         <%= render 'shared/comment_card', comment: comment %>
       </li>
     <% end %>

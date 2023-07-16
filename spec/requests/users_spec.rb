@@ -41,6 +41,6 @@ RSpec.describe 'Users', type: :request do
       it 'should include the placeholder text' do
         expect(response.body).to include(@post.title)
       end
-    end   
+    end
   end
 end
