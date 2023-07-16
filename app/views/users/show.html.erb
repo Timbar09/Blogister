@@ -1,6 +1,9 @@
 <div class='user'>
   <div class='user_header'>
     <%= render 'shared/user_card', user: @user %>
-    <p class='user_bio'><%= @user.bio %></p>
+    <div class='user_bio'>
+      <h3>Bio</h3>
+      <p><%= @user.bio %></p>
+    </div>
   </div>
 </div>
