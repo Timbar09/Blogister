@@ -1,6 +1,6 @@
 <div class='user_profile'>
   <div class='user_profile_header'>
-    <%= render 'shared/user_card', user: @user %>
+    <%= render 'shared/user_card', user: @user, user_card_class: 'user_card no_hover' %>
     <div class='user_profile_bio'>
       <h3>Bio</h3>
       <p><%= @user.bio %></p>
@@ -21,7 +21,7 @@
   
   <% if @user.posts_counter.positive? %>
     <div class='post_cta'>
-        <%=render 'shared/buttons', btnName: 'See all posts', btnClass: 'btn btn_cta', btnPath: user_posts_path(@user) %>
+        <%=render 'shared/button', btnName: 'See all posts', btnClass: 'btn btn_cta', btnPath: user_posts_path(@user) %>
     </div>
   <% end %>
 </div>

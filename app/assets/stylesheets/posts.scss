@@ -16,7 +16,6 @@
       .post_card {
         border-radius: 0.25rem 0.25rem 0 0;
         margin-bottom: 0;
-        pointer-events: none;
       }
     }
   }
@@ -66,6 +65,30 @@
       border-right: solid 1px var(--light-grey);
       border-left: solid 1px var(--light-grey);
       border-bottom: solid 1px var(--light-grey);
+    }
+
+    &_card {
+      display: flex;
+      gap: 1rem;
+    }
+
+    &_author {
+      p {
+        margin: 0;
+        padding: 0.5rem 0;
+      }
+    }
+
+    &_text {
+      flex: 1;
+
+      p {
+        margin: 0;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        background-color: var(--very-light-grey);
+        border: solid 1px var(--grey);
+      }
     }
   }
 }

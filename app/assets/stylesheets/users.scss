@@ -15,6 +15,10 @@
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     }
 
+    &.no_hover {
+      pointer-events: none;
+    }
+
     &_photo {
       img {
         width: 6rem;
@@ -46,7 +50,6 @@
       .user_card {
         border-radius: 0.25rem 0.25rem 0 0;
         margin-bottom: 0;
-        pointer-events: none;
       }
     }
 

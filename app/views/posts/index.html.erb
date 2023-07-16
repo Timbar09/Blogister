@@ -1,4 +1,4 @@
-<%= render 'shared/user_card', user: @user %>
+<%= render 'shared/user_card', user: @user, user_card_class: 'user_card no_hover' %>
 
 <ul class='post_list'>
   <% if @user.posts.empty? %>
@@ -12,8 +12,8 @@
             <p class='comment_empty-message'>No comments yet!</p>
           <% else %>
             <% post.five_recent_comments.each do |comment| %>
-              <li class='post_comment_card'>
-                <%= comment.text %>
+              <li>
+                <%= render 'shared/comment_card', comment: comment %>
               </li>
             <% end %>
           <% end %>
