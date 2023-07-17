@@ -40,6 +40,6 @@ RSpec.describe 'Users', type: :request do
       it 'should include the placeholder text' do
         expect(response.body).to include('A given user profile')
       end
-    end   
+    end
   end
 end
