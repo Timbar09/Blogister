@@ -2,7 +2,10 @@
   <div class='user_profile_header'>
     <%= render 'shared/user_card', user: @user, user_card_class: 'user_card no_hover' %>
     <div class='user_profile_bio'>
-      <h3>Bio</h3>
+      <div>
+        <h3>Bio</h3>
+        <%= render 'shared/button', btnName: 'New post +', btnClass: 'btn btn_cta btn_cta_alt btn_cta_new', btnPath: new_user_post_path(@user) %>
+      </div>
       <p><%= @user.bio %></p>
     </div>
   </div>

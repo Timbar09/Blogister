@@ -1,3 +1,7 @@
+<div class='post_actions-p'>
+  <%= render 'shared/button', btnName: 'New post +', btnClass: 'btn btn_cta btn_cta_new', btnPath: new_user_post_path(@user) %>
+</div>
+
 <div class='post_details'>
   <div class='post_details_header'>
     <h1><%= link_to @post.title, user_post_path(@user, @post), class: 'post_details_title' %></h1>

@@ -1,5 +1,9 @@
 <%= render 'shared/user_card', user: @user, user_card_class: 'user_card no_hover' %>
 
+<div class='post_actions'>
+  <%= render 'shared/button', btnName: 'New post +', btnClass: 'btn btn_cta btn_cta_new', btnPath: new_user_post_path(@user) %>
+</div>
+
 <ul class='post_list'>
   <% if @user.posts.empty? %>
     <p class='user_empty-message'>No posts yet!</p>
