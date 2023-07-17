@@ -117,16 +117,14 @@ To run the project, execute the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-| 👤 Author | GitHub | Twitter | LinkedIn |
-| :-- | :-- | :-- | :-- |
+| 👤 Author    | GitHub                                   | Twitter                                 | LinkedIn                                                      |
+| :----------- | :--------------------------------------- | :-------------------------------------- | :------------------------------------------------------------ |
 | Miles Mosweu | [@Timbar09](https://github.com/Timbar09) | [@Milez09](https://twitter.com/Milez09) | [@miles-mosweu09](https://www.linkedin.com/in/miles-mosweu09) |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Controllers specs.**
-- [ ] **Views.**
 - [ ] **Add forms.**
 - [ ] **Integration specs for Views and fix n+1 problems.**
 - [ ] **Add device.**

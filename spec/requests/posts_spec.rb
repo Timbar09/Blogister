@@ -4,6 +4,7 @@ RSpec.describe 'Posts', type: :request do
   describe 'GET' do
     before :all do
       @taker = User.create(name: 'The Undertaker', photo: 'https://picsum.photos/200/300', bio: 'The Phenom')
+      @post = Post.create(title: 'The Streak', text: 'The Streak is over!', author: @taker)
     end
 
     describe '/posts#index' do
@@ -20,13 +21,12 @@ RSpec.describe 'Posts', type: :request do
       end
 
       it 'should include the placeholder text' do
-        expect(response.body).to include('A list of posts by a given user')
+        expect(response.body).to include(@post.title)
       end
     end
 
     describe '/posts#show' do
       before :each do
-        @post = Post.create(title: 'The Streak', text: 'The Streak is over!', author: @taker)
         get user_post_path(@taker, @post)
       end
 
@@ -39,7 +39,7 @@ RSpec.describe 'Posts', type: :request do
       end
 
       it 'should include the placeholder text' do
-        expect(response.body).to include('Post details')
+        expect(response.body).to include(@post.text)
       end
     end
   end
