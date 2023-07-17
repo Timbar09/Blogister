@@ -23,6 +23,12 @@
       border-bottom: solid 1px var(--light-grey);
     }
 
+    &_grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
     &_counters {
       margin: 0;
       padding: 0.5rem 0;
@@ -142,13 +148,15 @@
     }
 
     &_text {
-      padding: 1rem;
+      padding: 1rem 1rem 0.5rem;
       margin: 0;
       border-top: solid 1px var(--light-grey);
     }
 
-    &_cta {
-      padding: 1rem;
+    &_actions {
+      padding: 0.5rem;
+      margin: 0 1rem;
+      border-top: 1px solid var(--light-grey);
     }
   }
 

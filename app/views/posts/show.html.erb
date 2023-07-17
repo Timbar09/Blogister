@@ -9,6 +9,10 @@
   </div>
 
   <p class='post_details_text'><%= @post.text %></p>
+
+  <div class='post_details_actions'>
+    <%= render 'shared/button', btnName: 'Add comment', btnPath: new_user_post_comment_path(@user, @post), btnClass: 'btn btn_interact' %>
+  </div>
 </div>
 
 <ul class='post_comment_list'>
