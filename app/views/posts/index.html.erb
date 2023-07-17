@@ -4,7 +4,7 @@
   <% if @user.posts.empty? %>
     <p class='user_empty-message'>No posts yet!</p>
   <% else %>
-    <% @user.three_recent_posts.each do |post| %>
+    <% @user.posts.order(created_at: :desc).each do |post| %>
       <li class='post_list_item'>
         <%= render 'shared/post_card', post: post %>
         <ul class='post_comment_list'>
