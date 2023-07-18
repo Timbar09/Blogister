@@ -1,3 +1,5 @@
+<%= content_for :title, "#{truncate(@post.title, length: 20)} | " %>
+
 <div class='post_actions-p'>
   <%= render 'shared/button', btnName: 'New post +', btnClass: 'btn btn_cta btn_cta_new', btnPath: new_user_post_path(@user) %>
 </div>
