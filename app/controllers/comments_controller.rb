@@ -1,15 +1,19 @@
 class CommentsController < ApplicationController
-  before_action :set_post, only: [:create]
+  before_action :set_post_and_user, only: %i[new create]
 
   def new
     @comment = Comment.new
   end
 
   def create
-    @comment = @post.comments.new(comment_params.merge(author: current_user))
+    @comment = Comment.new(comment_params)
+    @comment.author = current_user
+    @comment.post = @post
+
+    p @comment
 
     if @comment.save
-      redirect_to post_path(@post), notice: 'Comment was successfully created.'
+      redirect_to user_post_path(@user, @post), notice: 'Comment was successfully created.'
     else
       render :new, alert: 'Comment was not created.'
     end
@@ -17,8 +21,9 @@ class CommentsController < ApplicationController
 
   private
 
-  def set_post
+  def set_post_and_user
     @post = Post.find(params[:post_id])
+    @user = User.find(params[:user_id])
   end
 
   def comment_params

@@ -13,7 +13,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.create(post_params)
+    @post = Post.new(post_params)
+    @post.author = current_user
 
     if @post.save
       redirect_to user_post_path(current_user, @post), notice: 'Post was successfully created.'
