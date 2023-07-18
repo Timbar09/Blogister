@@ -1,6 +1,6 @@
 <%= form_with model: model, url: url, class: 'form', local: true do |f| %>
   <% if model == @like %>
-    <%= f.submit 'Like', class: 'btn btn_interact' %>
+    <%= f.submit 'Like', class: 'btn btn_interact like_btn'%>
   <% else %>
     <% fields.each do |field| %>
       <div class="field">
