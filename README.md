@@ -125,7 +125,6 @@ To run the project, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add forms.**
 - [ ] **Integration specs for Views and fix n+1 problems.**
 - [ ] **Add device.**
 - [ ] **Add authorization rules.**
