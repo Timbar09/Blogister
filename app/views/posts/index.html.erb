@@ -13,12 +13,12 @@
     <% @user.posts.order(created_at: :desc).each do |post| %>
       <li class='post_list_item'>
         <%= render 'shared/post_card', post: post %>
-        <ul class='post_comment_list'>
+        <ul class='comment_list'>
           <% if post.comments.empty? %>
             <p class='comment_empty-message'>No comments yet!</p>
           <% else %>
             <% post.five_recent_comments.each do |comment| %>
-              <li class='post_comment_list_item'>
+              <li class='comment_list_item'>
                 <%= render 'shared/comment_card', comment: comment %>
               </li>
             <% end %>
