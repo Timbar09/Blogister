@@ -6,9 +6,9 @@ class LikesController < ApplicationController
     @like.author = current_user
 
     if @like.save
-      redirect_to user_post_path(@post.author, @post), notice: 'Like was successfully created.'
+      redirect_back(fallback_location: root_path, notice: 'Like was successfully created.')
     else
-      redirect_to user_post_path(@post.author, @post), alert: 'Like was not created.'
+      render :new, alert: 'Like was not created.'
     end
   end
 end
