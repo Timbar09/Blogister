@@ -1,4 +1,4 @@
-<%= content_for :title, "#{truncate(@post.title, length: 20)} | " %>
+<%= content_for :title, "#{truncate(@post.title.capitalize, length: 20)} | " %>
 
 <div class='post_actions-p'>
   <%= render 'shared/button', btnName: 'New post +', btnClass: 'btn btn_cta btn_cta_new', btnPath: new_user_post_path(@user) %>
@@ -6,7 +6,7 @@
 
 <div class='post_details'>
   <div class='post_details_header'>
-    <h1><%= link_to @post.title, user_post_path(@user, @post), class: 'post_details_title' %></h1>
+    <h1><%= link_to @post.title.capitalize, user_post_path(@user, @post), class: 'post_details_title' %></h1>
     <p class='post_card_counters'>Comments: <%= @post.comments_counter %> | Likes: <%= @post.likes_counter %></p>
   </div>
 

@@ -18,7 +18,7 @@
     <% else %>
       <% @user.three_recent_posts.each do |post| %>
         <li>
-          <%= render 'shared/post_card', post: post %>
+          <%= render 'shared/post_card', post: post, post_card_class: 'post_card' %>
         </li>
       <% end %>
     <% end %>

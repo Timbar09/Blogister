@@ -1,9 +1,11 @@
 <div class='comment_card'>
   <div class='comment_photo'>
-    <% if comment.author.photo.present? && comment.author.photo.match(/.(jpg|jpeg|png|gif)$/i) %>
-      <%= image_tag(comment.author.photo, alt: comment.author.name, class: 'comment_photo_image') %>
-    <% else %>
-      <%= image_tag('default_user.jpg', alt: comment.author.name, class: 'comment_photo_image') %>
+    <%= link_to comment.author do %>
+      <% if comment.author.photo.present? && comment.author.photo.match(/.(jpg|jpeg|png|gif)$/i) %>
+        <%= image_tag(comment.author.photo, alt: comment.author.name, class: 'comment_photo_image') %>
+      <% else %>
+        <%= image_tag('default_user.jpg', alt: comment.author.name, class: 'comment_photo_image') %>
+      <% end %>
     <% end %>
   </div>
 
