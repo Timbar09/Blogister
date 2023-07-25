@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_user, only: %i[index show new]
 
   def index
-    @posts = Post.all
+    @posts = @user.posts.include(:comments)
   end
 
   def show; end
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   end
 
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.include(:comments, :author)find(params[:id])
   end
 
   def post_params
