@@ -7,7 +7,8 @@ RSpec.describe 'User posts', type: :system, js: true do
     @cr7 = User.create(name: 'Cristiano', photo: '/assets/default_user.jpg',
                        bio: 'I am ubleivable inside the pitch.')
 
-    @messi_post1 = Post.create(title: 'The good old days', text: 'I miss the old days. Those days were the best.', author: @messi)
+    @messi_post1 = Post.create(title: 'The good old days', text: 'I miss the old days. Those days were the best.',
+                               author: @messi)
     @messi_post2 = Post.create(title: 'Second Post', text: 'This is the second post.', author: @messi)
     @messi_post3 = Post.create(title: 'Third Post', text: 'This is the third post.', author: @messi)
     @messi_post4 = Post.create(title: 'Fourth Post', text: 'This is the fourth post.', author: @messi)
@@ -59,7 +60,7 @@ RSpec.describe 'User posts', type: :system, js: true do
     it 'should render a user\'s post information' do
       expect(page).to have_content(@messi_post1.title.capitalize)
       expect(page).to have_content("by #{@messi.name}")
-      expect(page).to have_content("Comments: 7 | Likes: 0")
+      expect(page).to have_content('Comments: 7 | Likes: 0')
       expect(page).to have_content(@messi_post1.text)
 
       # the username and text of each comment
