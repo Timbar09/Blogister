@@ -13,7 +13,7 @@
   </div>
 
   <ul class='post_list'>
-    <% if @user.posts.empty? %>
+    <% if @user.three_recent_posts.empty? %>
       <p class='user_empty-message'>No posts yet!</p>
     <% else %>
       <% @user.three_recent_posts.each do |post| %>

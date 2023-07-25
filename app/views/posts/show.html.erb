@@ -20,10 +20,10 @@
 </div>
 
 <ul class='comment_list'>
-  <% if @post.comments.empty? %>
+  <% if @comments.empty? %>
     <p class='comment_empty-message'>No comments yet!</p>
   <% else %>
-    <% @post.comments.each do |comment| %>
+    <% @comments.each do |comment| %>
       <li class='comment_list_item'>
         <%= render 'shared/comment_card', comment: comment %>
       </li>

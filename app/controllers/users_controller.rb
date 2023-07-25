@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show]
 
   def index
-    @users = User.include(post).all
+    @users = User.all
   end
 
   def show; end
@@ -10,6 +10,6 @@ class UsersController < ApplicationController
   private
 
   def set_user
-    @user = User.find(params[:id])
+    @user = User.includes(:posts).find(params[:id])
   end
 end
