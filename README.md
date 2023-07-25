@@ -117,15 +117,15 @@ To run the project, execute the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-| 👤 Author    | GitHub                                   | Twitter                                 | LinkedIn                                                      |
-| :----------- | :--------------------------------------- | :-------------------------------------- | :------------------------------------------------------------ |
-| Miles Mosweu | [@Timbar09](https://github.com/Timbar09) | [@Milez09](https://twitter.com/Milez09) | [@miles-mosweu09](https://www.linkedin.com/in/miles-mosweu09) |
+| 👤 Author       | GitHub                                     | Twitter                                     | LinkedIn                                                                             |
+| :-------------- | :----------------------------------------- | :------------------------------------------ | :----------------------------------------------------------------------------------- |
+| Miles Mosweu    | [@Timbar09](https://github.com/Timbar09)   | [@Milez09](https://twitter.com/Milez09)     | [@miles-mosweu09](https://www.linkedin.com/in/miles-mosweu09)                        |
+| Esther Udondian | [@eudondian](https://github.com/eudondian) | [@eudondian](https://twitter.com/eudondian) | [@esther-udondian-186849119](https://www.linkedin.com/in/esther-udondian-186849119/) |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add device.**
 - [ ] **Add authorization rules.**
 - [ ] **Add API endpoints.**
 
