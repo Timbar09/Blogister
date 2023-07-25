@@ -105,6 +105,18 @@
       h1 {
         font-weight: 500;
         color: var(--light-grey);
+
+        span {
+          font-size: 0.95rem;
+          color: var(--grey);
+        }
+      }
+
+      &_author {
+        &:hover {
+          color: var(--light-grey);
+          text-decoration: underline;
+        }
       }
     }
 

@@ -6,7 +6,10 @@
 
 <div class='post_details'>
   <div class='post_details_header'>
-    <h1><%= link_to @post.title.capitalize, user_post_path(@user, @post), class: 'post_details_title' %></h1>
+    <h1>
+      <%= link_to @post.title.capitalize, user_post_path(@user, @post), class: 'post_details_title' %>
+      <span>by <%= link_to @user.name, user_path(@user), class: 'post_details_header_author' %></span>
+    </h1>
     <p class='post_card_counters'>Comments: <%= @post.comments_counter %> | Likes: <%= @post.likes_counter %></p>
   </div>
 
