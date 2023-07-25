@@ -50,4 +50,23 @@ RSpec.describe 'User posts', type: :system, js: true do
       expect(page).to have_current_path(user_post_path(@messi, @messi_post1))
     end
   end
+
+  describe 'show page' do
+    before(:example) do
+      visit user_post_path(@messi, @messi_post1)
+    end
+
+    it 'should render a user\'s post information' do
+      expect(page).to have_content(@messi_post1.title.capitalize)
+      expect(page).to have_content("by #{@messi.name}")
+      expect(page).to have_content("Comments: 7 | Likes: 0")
+      expect(page).to have_content(@messi_post1.text)
+
+      # the username and text of each comment
+      @messi_post1.comments.each do |comment|
+        expect(page).to have_content(comment.author.name)
+        expect(page).to have_content(comment.text)
+      end
+    end
+  end
 end
