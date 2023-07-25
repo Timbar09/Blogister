@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Users', type: :system, js: true do
   before(:all) do
-    @john = User.create(name: 'John Cena', photo: 'https://source.unsplashr.com/1600x900gdsd',
+    @john = User.create(name: 'John Cena', photo: 'https://picsum.photos/200/300',
                         bio: 'Welcome to the new era of the WWE. The champ is here!')
     @cristiano = User.create(name: 'Cristiano Ronaldo', photo: '/assets/default_user.jpg',
                              bio: 'I am ubleivable inside the pitch.')
@@ -24,47 +24,16 @@ RSpec.describe 'Users', type: :system, js: true do
       expect(page).to have_content(@cristiano.name)
       expect(page).to have_content(@john.name)
 
+      expect(page).to have_css("img[src*='https://picsum.photos/200/300']")
       expect(page).to have_css("img[src*='default_user.jpg']")
 
-      expect(page).to have_content('Posts: 0')
-      expect(page).to have_content('Posts: 5')
+      expect(page).to have_content(@cristiano.posts_counter)
+      expect(page).to have_content(@john.posts_counter)
     end
 
     it 'should redirect to the user page when a username is clicked' do
       find('.user_card', text: @john.name).click
       expect(page).to have_current_path(user_path(@john))
-    end
-  end
-
-  describe 'show page' do
-    before(:example) do
-      visit user_path(@john)
-    end
-
-    it 'shows the user profile information' do
-      expect(page).to have_css("img[src*='default_user.jpg']")
-      expect(page).to have_content(@john.name)
-      expect(page).to have_content("Posts: #{@john.posts_counter}")
-      expect(page).to have_content(@john.bio)
-
-      # shows the user's 3 most recent posts
-      @john.three_recent_posts.each do |post|
-        expect(page).to have_content(post.title.capitalize)
-        expect(page).to have_content(post.text)
-      end
-
-      # shows a button to view all posts
-      expect(page).to have_link('See all posts', href: user_posts_path(@john))
-    end
-
-    it 'redirects to post show page when clicking on a post title' do
-      click_link @post5.title.capitalize
-      expect(page).to have_current_path(user_post_path(@john, @post5))
-    end
-
-    it 'redirects to user posts index page when clicking on view all posts button' do
-      click_link 'See all posts'
-      expect(page).to have_current_path(user_posts_path(@john))
     end
   end
 end

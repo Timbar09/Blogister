@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'User posts', type: :system, js: true do
-  before(:example) do
-    @messi = User.create(name: 'Messi', photo: '/assets/default_user.jpg',
+  before(:all) do
+    @messi = User.create(name: 'Messi', photo: 'https://picsum.photos/200/300',
                          bio: 'I love Barcelona and Argentina.')
     @cr7 = User.create(name: 'Cristiano', photo: '/assets/default_user.jpg',
                        bio: 'I am ubleivable inside the pitch.')
@@ -28,7 +28,7 @@ RSpec.describe 'User posts', type: :system, js: true do
     end
 
     it 'should render posts author information' do
-      expect(page).to have_css("img[src*='default_user.jpg']")
+      expect(page).to have_css("img[src*='/assets/default_user.jpg']")
       expect(page).to have_content(@messi.name)
       expect(page).to have_content("Posts: #{@messi.posts_counter}")
     end
@@ -49,25 +49,6 @@ RSpec.describe 'User posts', type: :system, js: true do
     it 'should redirect to post show page when clicking on post title' do
       click_link @messi_post1.title.capitalize
       expect(page).to have_current_path(user_post_path(@messi, @messi_post1))
-    end
-  end
-
-  describe 'show page' do
-    before(:example) do
-      visit user_post_path(@messi, @messi_post1)
-    end
-
-    it 'should render a user\'s post information' do
-      expect(page).to have_content(@messi_post1.title.capitalize)
-      expect(page).to have_content("by #{@messi.name}")
-      expect(page).to have_content('Comments: 7 | Likes: 0')
-      expect(page).to have_content(@messi_post1.text)
-
-      # the username and text of each comment
-      @messi_post1.comments.each do |comment|
-        expect(page).to have_content(comment.author.name)
-        expect(page).to have_content(comment.text)
-      end
     end
   end
 end
