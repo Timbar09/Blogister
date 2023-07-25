@@ -1,9 +1,5 @@
 require 'rails_helper'
 
-# generate a random photo url
-# 
-
-
 RSpec.describe 'Users', type: :system, js: true do
   before(:all) do
     @john = User.create(name: 'John Cena', photo: 'https://picsum.photos/200/300',
