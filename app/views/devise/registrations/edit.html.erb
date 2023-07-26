@@ -25,7 +25,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <em>we need your current password to confirm your changes</em>
     <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Current password (we need your current password to confirm your changes)" %>
   </div>
 
@@ -37,7 +37,7 @@
 <div class="form_links">
   <h3>Cancel my account</h3>
 
-  <div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "btn btn_cta btn_cta_delete" %></div>
+  <div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "btn btn_interact" %></div>
 
   <%= link_to "Back", :back %>
 </div>
