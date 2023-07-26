@@ -82,3 +82,5 @@ group :test do
   # Use database cleaner to reset the database between tests
   gem 'database_cleaner'
 end
+
+gem 'devise'

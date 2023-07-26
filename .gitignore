@@ -32,3 +32,6 @@
 
 # Ignore node_modules
 /node_modules/
+
+# Ignore this personal file
+/my_rails.html.erb
