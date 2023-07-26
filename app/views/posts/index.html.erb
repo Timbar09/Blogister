@@ -2,9 +2,11 @@
 
 <%= render 'shared/user_card', user: @user, user_card_class: 'user_card no_hover' %>
 
-<div class='post_actions'>
-  <%= render 'shared/button', btnName: 'New post +', btnClass: 'btn btn_cta btn_cta_new', btnPath: new_user_post_path(@user) %>
-</div>
+<% if current_user == @user %>
+  <div class='post_actions'>
+    <%= render 'shared/button', btnName: 'New post +', btnClass: 'btn btn_cta btn_cta_new', btnPath: new_user_post_path(@user) %>
+  </div>
+<% end %>
 
 <ul class='post_list'>
   <% if @posts.empty? %>
