@@ -3,7 +3,7 @@ class Comment < ApplicationRecord
   belongs_to :post
 
   after_save :update_comments_counter
-  after_destroy { update_pcomments_counter(false) }
+  after_destroy { update_comments_counter(increment: false) }
 
   validates :author, :post, :text, presence: true
   validates :text, length: { minimum: 1, maximum: 250 }
