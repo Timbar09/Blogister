@@ -2,7 +2,9 @@
   <div class='post_card_header'>
     <h3><%= link_to post.title.capitalize, user_post_path(@user, post), class: 'post_card_title' %></h3>
 
+    <% if can? :destroy, post %>
       <%= render 'shared/delete_btn', path: user_post_path(@user, post) %>
+    <% end %>
   </div>
 
   <div class='post_card_text'>
