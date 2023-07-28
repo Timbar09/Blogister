@@ -39,6 +39,12 @@
       --hover: var(--green);
       --active: var(--green);
     }
+
+    &_delete {
+      padding: 0.25rem 0.5rem;
+      --hover: var(--red);
+      --active: var(--light-red);
+    }
   }
 
   &_interact {

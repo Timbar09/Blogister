@@ -24,19 +24,19 @@
         background-color: var(--grey);
         border: solid 1px var(--dark-grey);
 
-        p {
-          &:first-child {
-            text-align: right;
-            border-bottom: solid 1px var(--dark-grey);
+        &_grid {
+          border-bottom: solid 1px var(--dark-grey);
 
+          p {
+            order: 1;
             a {
               color: var(--very-dark);
             }
           }
+        }
 
-          &:last-child {
-            color: var(--dark);
-          }
+        > p {
+          color: var(--dark);
         }
       }
     }
@@ -62,17 +62,21 @@
     background-color: var(--very-light-grey);
     border: solid 1px var(--grey);
 
-    p {
+    &_grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--light-grey);
+      padding-bottom: 0.25rem;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    > P {
+      padding-top: 0.25rem;
       margin: 0;
-
-      &:first-child {
-        padding-bottom: 0.25rem;
-        border-bottom: 1px solid var(--light-grey);
-      }
-
-      &:last-child {
-        padding-top: 0.25rem;
-      }
     }
   }
 

@@ -1,8 +1,12 @@
 <div class='<%= post_card_class %>'>
-  <h3><%= link_to post.title.capitalize, user_post_path(@user, post), class: 'post_card_title' %></h3>
+  <div class='post_card_header'>
+    <h3><%= link_to post.title.capitalize, user_post_path(@user, post), class: 'post_card_title' %></h3>
 
-  <div>
-    <p class='post_card_text'>
+      <%= render 'shared/delete_btn', path: user_post_path(@user, post) %>
+  </div>
+
+  <div class='post_card_text'>
+    <p class='post_card_description'>
       <% if post.text.length > 100 %>
         <%= truncate(post.text, length: 100) %>
       <% else %>

@@ -1,24 +1,34 @@
 .post {
   &_card {
-    padding: 1rem;
     border: solid 1px var(--light-grey);
     border-radius: 0.25rem;
     background-color: var(--very-light-grey);
 
-    h3 {
-      font-weight: 500;
-      padding-bottom: 0.5rem;
+    &_header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1rem;
 
-      a {
-        &:hover {
-          text-decoration: underline;
+      h3 {
+        font-weight: 500;
+
+        a {
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
 
     &_text {
+      padding: 0 1rem;
       margin: 0;
-      padding: 0.5rem;
+    }
+
+    &_description {
+      margin: 0;
+      padding: 0.5rem 0;
       border-top: solid 1px var(--light-grey);
       border-bottom: solid 1px var(--light-grey);
     }
@@ -43,24 +53,19 @@
     &_full {
       position: relative;
       margin-bottom: 0;
-      padding: 0;
       border-radius: 0.25rem 0.25rem 0 0;
       border-left: solid 1px var(--dark-grey);
       border-top: solid 1px var(--dark-grey);
       border-right: solid 1px var(--dark-grey);
       box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
 
-      h3 {
-        padding: 1rem;
-        border-bottom: solid 1px var(--light-grey);
+      .post_card_header {
         background-color: var(--dark);
-        color: var(--light-grey);
         border-radius: inherit;
-      }
 
-      > div {
-        padding-left: 1rem;
-        padding-right: 1rem;
+        h3 {
+          color: var(--light-grey);
+        }
       }
     }
   }
@@ -112,6 +117,12 @@
         }
       }
 
+      > div {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
       &_author {
         &:hover {
           color: var(--light-grey);
@@ -121,9 +132,7 @@
     }
 
     &_text {
-      padding: 1rem 1rem 0.5rem;
-      margin: 0;
-      border-top: solid 1px var(--light-grey);
+      padding: 0 1rem;
     }
 
     &_actions {

@@ -6,7 +6,6 @@
   }
 <% end %>
 
-<%# add comment_card_current_user class if the comment is from the current user %>
 <div class="comment_card <%= 'comment_card_current_user' if comment.author == current_user %>">
   <div class="comment_photo">
     <%= link_to comment.author do %>
@@ -15,8 +14,13 @@
   </div>
 
   <div class='comment_text'>
-    <%# if the comment is from the current user, the link name will be 'You' %>
-    <p><%= link_to (comment.author == current_user ? 'You' : comment.author.name), user_path(comment.author), class: 'comment_author' %></p>
+    <div class='comment_text_grid'>
+      <p>
+        <%= link_to (comment.author == current_user ? 'You' : comment.author.name), user_path(comment.author), class: 'comment_author' %>
+      </p>
+      <%= render 'shared/delete_btn', path: user_post_comment_path(comment.author, comment.post, comment) %>
+    </div>
+    
     <p><%= comment.text %></p>
   </div>
 </div>

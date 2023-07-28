@@ -13,7 +13,12 @@
       <%= link_to @post.title.capitalize, user_post_path(@user, @post), class: 'post_details_title' %>
       <span>by <%= link_to @user.name, user_path(@user), class: 'post_details_header_author' %></span>
     </h1>
-    <p class='post_card_counters'>Comments: <%= @post.comments_counter %> | Likes: <%= @post.likes_counter %></p>
+
+    <div>
+        <%= render 'shared/delete_btn', path: user_post_path(@user, @post) %>
+      
+      <p class='post_card_counters'>Comments: <%= @post.comments_counter %> | Likes: <%= @post.likes_counter %></p>
+    </div>
   </div>
 
   <p class='post_details_text'><%= @post.text %></p>
