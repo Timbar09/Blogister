@@ -2,8 +2,6 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: %i[show destroy]
   before_action :set_user, only: %i[index show new destroy destroy]
-  before_action :set_post, only: [:show]
-  before_action :set_user, only: %i[index show new]
 
   def index
     @posts = @user.posts.includes(:comments)
