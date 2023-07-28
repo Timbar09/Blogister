@@ -18,9 +18,12 @@
       <p>
         <%= link_to (comment.author == current_user ? 'You' : comment.author.name), user_path(comment.author), class: 'comment_author' %>
       </p>
-      <%= render 'shared/delete_btn', path: user_post_comment_path(comment.author, comment.post, comment) %>
+
+      <% if can? :destroy, comment %>
+        <%= render 'shared/delete_btn', path: user_post_comment_path(comment.author, comment.post, comment) %>
+      <% end %>
     </div>
-    
+
     <p><%= comment.text %></p>
   </div>
 </div>
