@@ -11,10 +11,9 @@ class Like < ApplicationRecord
 
   def update_likes_counter(increment = true)
     if increment
-      post.increment!(:likes_count)
+      post.increment!(:likes_counter)
     else
-      post.decrement!(:likes_count)
+      post.decrement!(:likes_counter)
     end
-  end
   end
 end

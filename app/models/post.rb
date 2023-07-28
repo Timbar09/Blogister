@@ -16,6 +16,10 @@ class Post < ApplicationRecord
     comments.order(created_at: :desc).limit(5)
   end
 
+  def liked_by?(user)
+    likes.exists?(author: user)
+  end
+
   private
 
   def update_posts_counter(increment: true)

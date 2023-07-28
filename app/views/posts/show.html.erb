@@ -21,7 +21,7 @@
   <div class='post_details_actions'>
     <%= render 'shared/button', btnName: 'Add comment', btnPath: new_user_post_comment_path(@user, @post), btnClass: 'btn btn_interact' %>
 
-    <%= render 'shared/form', model: @like, url: user_post_likes_path(@user, @post), fields: [], class_name: 'form_like' %>
+    <%= render 'shared/form', model: @like, url: user_post_likes_path(@user, @post), fields: [], class_name: 'form_like', liked: @post.liked_by?(current_user) %>
   </div>
 </div>
 

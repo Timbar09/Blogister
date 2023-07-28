@@ -1,6 +1,7 @@
 <%= form_with model: model, url: url, class: class_name, local: true do |f| %>
   <% if model == @like %>
-    <%= f.submit 'Like', class: 'btn btn_interact like_btn'%>
+  <%# Include the liked class if the current user has liked the post %>
+    <%= f.submit "#{liked ? 'liked' : 'Like'}", class: "btn btn_interact #{'liked' if liked}" %>
   <% else %>
     <% fields.each do |field| %>
       <div class="field">

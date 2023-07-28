@@ -9,10 +9,11 @@ class Comment < ApplicationRecord
   validates :text, length: { minimum: 1, maximum: 250 }
 
 
-  ddef update_comments_counter(increment = true)
-  if increment
-    author.increment!(:posts_counter)
-  else
-    author.decrement!(:posts_counter)
+  def update_comments_counter(increment = true)
+    if increment
+      author.increment!(:posts_counter)
+    else
+      author.decrement!(:posts_counter)
+    end
   end
 end
