@@ -5,7 +5,7 @@ class Post < ApplicationRecord
 
   after_save :update_posts_counter
   after_destroy { update_posts_counter(false) }
-  
+
   validates :title, :text, presence: true
   validates :title, length: { minimum: 1, maximum: 250 }
   validates :text, length: { minimum: 1, maximum: 500 }

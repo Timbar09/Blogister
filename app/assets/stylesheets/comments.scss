@@ -18,6 +18,32 @@
     display: flex;
     gap: 1rem;
 
+    &_text {
+      flex: 1;
+      margin: 0;
+      padding: 0.25rem 0.5rem 0.5rem;
+      border-radius: 0.25rem;
+      background-color: var(--very-light-grey);
+      border: solid 1px var(--grey);
+
+      &_grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--light-grey);
+        padding-bottom: 0.25rem;
+
+        p {
+          margin: 0;
+        }
+      }
+
+      > p {
+        padding-top: 0.25rem;
+        margin: 0;
+      }
+    }
+
     &_current_user {
       .comment_text {
         order: -1;
@@ -29,6 +55,7 @@
 
           p {
             order: 1;
+
             a {
               color: var(--very-dark);
             }
@@ -51,32 +78,6 @@
       background-color: var(--light-grey);
       background-size: cover;
       background-position: center;
-    }
-  }
-
-  &_text {
-    flex: 1;
-    margin: 0;
-    padding: 0.25rem 0.5rem 0.5rem;
-    border-radius: 0.25rem;
-    background-color: var(--very-light-grey);
-    border: solid 1px var(--grey);
-
-    &_grid {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--light-grey);
-      padding-bottom: 0.25rem;
-
-      p {
-        margin: 0;
-      }
-    }
-
-    > P {
-      padding-top: 0.25rem;
-      margin: 0;
     }
   }
 

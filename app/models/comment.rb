@@ -4,12 +4,12 @@ class Comment < ApplicationRecord
 
   after_save :update_comments_counter
   after_destroy { update_pcomments_counter(false) }
-  
+
   validates :author, :post, :text, presence: true
   validates :text, length: { minimum: 1, maximum: 250 }
 
 
-  def update_comments_counter(increment = true)
+  def update_comments_counter(increment: true)
     if increment
       author.increment!(:posts_counter)
     else

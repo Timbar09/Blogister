@@ -41,9 +41,10 @@
     }
 
     &_delete {
-      padding: 0.25rem 0.5rem;
       --hover: var(--red);
       --active: var(--light-red);
+
+      padding: 0.25rem 0.5rem;
     }
   }
 
