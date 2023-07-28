@@ -8,7 +8,6 @@ class Comment < ApplicationRecord
   validates :author, :post, :text, presence: true
   validates :text, length: { minimum: 1, maximum: 250 }
 
-
   def update_comments_counter(increment: true)
     if increment
       author.increment!(:posts_counter)
