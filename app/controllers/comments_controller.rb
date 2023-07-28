@@ -1,6 +1,11 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_post_and_user, only: %i[new create destroy]
+  before_action :set_post_and_user, only: %i[index new create destroy]
+  
+  def index
+    @comments = @post.comments
+    render json: @comments
+  end
 
   def new
     @comment = Comment.new
