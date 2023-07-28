@@ -2,6 +2,24 @@
   max-width: 40rem;
   margin: 0 auto;
 
+  #error_explanation {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: solid 1px var(--red);
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+
+    ul {
+      font-size: 0.85rem;
+      list-style: inherit;
+      margin-left: 1.5rem;
+    }
+  }
+
   &_title {
     max-width: 40rem;
     margin: 0 auto 1rem;

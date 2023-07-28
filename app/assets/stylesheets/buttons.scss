@@ -39,6 +39,13 @@
       --hover: var(--green);
       --active: var(--green);
     }
+
+    &_delete {
+      --hover: var(--red);
+      --active: var(--light-red);
+
+      padding: 0.25rem 0.5rem;
+    }
   }
 
   &_interact {
@@ -47,6 +54,11 @@
     &:hover {
       background-color: var(--grey);
       color: var(--dark);
+    }
+
+    &.liked {
+      color: blue;
+      font-weight: 700;
     }
   }
 }

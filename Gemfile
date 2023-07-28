@@ -83,4 +83,8 @@ group :test do
   gem 'database_cleaner'
 end
 
+# Authenticate users with Devise
 gem 'devise'
+
+# Authorization with CanCanCan
+gem 'cancancan'

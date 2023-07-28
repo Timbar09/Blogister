@@ -1,8 +1,14 @@
 <div class='<%= post_card_class %>'>
-  <h3><%= link_to post.title.capitalize, user_post_path(@user, post), class: 'post_card_title' %></h3>
+  <div class='post_card_header'>
+    <h3><%= link_to post.title.capitalize, user_post_path(@user, post), class: 'post_card_title' %></h3>
 
-  <div>
-    <p class='post_card_text'>
+    <% if can? :destroy, post %>
+      <%= render 'shared/delete_btn', path: user_post_path(@user, post) %>
+    <% end %>
+  </div>
+
+  <div class='post_card_text'>
+    <p class='post_card_description'>
       <% if post.text.length > 100 %>
         <%= truncate(post.text, length: 100) %>
       <% else %>
@@ -14,7 +20,7 @@
       <div class='post_card_actions'>
         <%= render 'shared/button', btnName: 'Add comment', btnPath: new_user_post_comment_path(@user, post), btnClass: 'btn btn_interact' %>
 
-        <%= render 'shared/form', model: @like, url: user_post_likes_path(@user, post), fields: [] %>
+        <%= render 'shared/form', model: @like, url: user_post_likes_path(@user, post), fields: [], class_name: 'form_like', liked: post.liked_by?(current_user) %>
       </div>
 
       <p class='post_card_counters'>Comments: <%= post.comments_counter %> | Likes: <%= post.likes_counter %></p>

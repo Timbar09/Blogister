@@ -2,15 +2,20 @@ class LikesController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @like = Like.new
     @post = Post.find(params[:post_id])
-    @like.post = @post
-    @like.author = current_user
+    @like = Like.find_by(author: current_user, post: @post)
 
-    if @like.save
-      redirect_back(fallback_location: root_path, notice: 'Like was successfully created.')
+    if @like
+      @like.destroy
+      redirect_back(fallback_location: user_post_path(@post.author, @post), notice: 'Post was successfully unliked.')
     else
-      render :new, alert: 'Like was not created.'
+      @like = Like.new(author: current_user, post: @post)
+
+      if @like.save
+        redirect_back(fallback_location: user_post_path(@post.author, @post), notice: 'Post was successfully liked.')
+      else
+        redirect_back(fallback_location: user_post_path(@post.author, @post), alert: 'Error: Post was not liked.')
+      end
     end
   end
 end

@@ -6,15 +6,24 @@
   }
 <% end %>
 
-<div class='comment_card'>
-  <div class='comment_photo'>
+<div class="comment_card <%= 'comment_card_current_user' if comment.author == current_user %>">
+  <div class="comment_photo">
     <%= link_to comment.author do %>
       <%= image_tag(comment.author.photo, alt: comment.author.name, onerror: 'replaceWithDefaultImage(this, "/assets/default_user.jpg")', class: 'comment_photo_image') %>
     <% end %>
   </div>
 
   <div class='comment_text'>
-    <p><%= link_to comment.author.name, user_path(comment.author), class: 'comment_author' %></p>
+    <div class='comment_text_grid'>
+      <p>
+        <%= link_to (comment.author == current_user ? 'You' : comment.author.name), user_path(comment.author), class: 'comment_author' %>
+      </p>
+
+      <% if can? :destroy, comment %>
+        <%= render 'shared/delete_btn', path: user_post_comment_path(comment.author, comment.post, comment) %>
+      <% end %>
+    </div>
+
     <p><%= comment.text %></p>
   </div>
 </div>

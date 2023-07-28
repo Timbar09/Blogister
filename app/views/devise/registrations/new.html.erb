@@ -15,7 +15,11 @@
 
   <div class="field">
     <%= f.text_area :bio, autofocus: true, autocomplete: "bio", placeholder: "Bio" %>
-  </div>    
+  </div>
+
+  <div class="field">
+    <%= f.collection_select :role, User::ROLES, :to_s, -> (role) { role.to_s.humanize }%>
+  </div>  
 
   <div class="field">
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
