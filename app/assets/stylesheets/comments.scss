@@ -14,35 +14,35 @@
     }
   }
 
-  &_card {
-    display: flex;
-    gap: 1rem;
+  &_text {
+    flex: 1;
+    margin: 0;
+    padding: 0.25rem 0.5rem 0.5rem;
+    border-radius: 0.25rem;
+    background-color: var(--very-light-grey);
+    border: solid 1px var(--grey);
 
-    &_text {
-      flex: 1;
-      margin: 0;
-      padding: 0.25rem 0.5rem 0.5rem;
-      border-radius: 0.25rem;
-      background-color: var(--very-light-grey);
-      border: solid 1px var(--grey);
+    &_grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--light-grey);
+      padding-bottom: 0.25rem;
 
-      &_grid {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid var(--light-grey);
-        padding-bottom: 0.25rem;
-
-        p {
-          margin: 0;
-        }
-      }
-
-      > p {
-        padding-top: 0.25rem;
+      p {
         margin: 0;
       }
     }
+
+    > p {
+      padding-top: 0.25rem;
+      margin: 0;
+    }
+  }
+
+  &_card {
+    display: flex;
+    gap: 1rem;
 
     &_current_user {
       .comment_text {
