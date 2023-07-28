@@ -16,12 +16,16 @@ class CommentsController < ApplicationController
     @comment.author = current_user
     @comment.post = @post
 
-    p @comment
-
     if @comment.save
-      redirect_to user_post_path(@user, @post), notice: 'Comment was successfully created.'
+      respond_to do |format|
+        format.html { redirect_back(fallback_location: user_post_path(@user, @post), notice: 'Comment was successfully created.') }
+        format.json { render json: @comment, status: :created }
+      end
     else
-      render :new, alert: 'Comment was not created.'
+      respond_to do |format|
+        format.html { render :new, alert: 'Error: Comment was not created.' }
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
+      end
     end
   end
 
