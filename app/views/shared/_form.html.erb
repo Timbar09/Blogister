@@ -1,7 +1,14 @@
 <%= form_with model: model, url: url, class: class_name, local: true do |f| %>
   <% if model == @like %>
-  <%# Include the liked class if the current user has liked the post %>
-    <%= f.submit "#{liked ? 'liked' : 'Like'}", class: "btn btn_interact #{'liked' if liked}" %>
+    <%= button_tag(type: 'submit', class: "post_card_btn #{'liked' if liked}") do %>
+      <% if liked %>
+        <%= content_tag(:i, 'favorite', class: 'material-icons') %>
+        <%= content_tag(:span, 'Liked', class: 'post_card_btn_text') %>
+      <% else %>
+        <%= content_tag(:i, 'favorite', class: 'material-icons post_card_btn_text') %>
+        <%= content_tag(:span, 'Like', class: 'post_card_btn_text') %>
+      <% end %>
+    <% end %>
   <% else %>
     <% fields.each do |field| %>
       <div class="field">

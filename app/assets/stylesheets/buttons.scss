@@ -47,9 +47,33 @@
       padding: 0.25rem 0.5rem;
     }
   }
+}
 
-  &_interact {
-    padding: 0.25rem 0.5rem;
+.interaction {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  &_grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-top: solid 1px var(--light-grey);
+  }
+
+  &_btn {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.2rem 0.35rem;
+    font-size: 0.85rem;
+    border: 0;
+    border-radius: 0.25rem;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 150ms ease-in-out, color 150ms ease-in-out;
 
     &:hover {
       background-color: var(--grey);
@@ -57,8 +81,15 @@
     }
 
     &.liked {
-      color: blue;
+      color: #ff4d4d;
       font-weight: 700;
+    }
+
+    i,
+    span {
+      font-size: inherit;
+      font-weight: 500;
+      color: inherit;
     }
   }
 }

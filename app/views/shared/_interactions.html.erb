@@ -1,0 +1,18 @@
+<div class='interaction'>
+  <%= link_to new_user_post_comment_path(user, post), class: 'interaction_btn' do %>
+    <i class="material-icons interaction_btn_icon">comment</i>
+    <span class='interaction_btn_text'>Comment</span>
+  <% end %>
+
+  <%= form_with model: model, url: user_post_likes_path(user, post), class: 'like_form', local: true do |f| %>
+    <%= button_tag(type: 'submit', class: "interaction_btn #{'liked' if liked}") do %>
+      <% if liked %>
+        <%= content_tag(:i, 'favorite', class: 'material-icons interaction_btn_icon') %>
+        <%= content_tag(:span, 'Liked', class: 'interaction_btn_text') %>
+      <% else %>
+        <%= content_tag(:i, 'favorite', class: 'material-icons interaction_btn_icon') %>
+        <%= content_tag(:span, 'Like', class: 'interaction_btn_text') %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
