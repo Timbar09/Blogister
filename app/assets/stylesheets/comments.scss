@@ -42,16 +42,16 @@
 
   &_card {
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
 
     &_current_user {
       .comment_text {
         order: -1;
         background-color: var(--grey);
-        border: solid 1px var(--dark-grey);
+        border: solid 1px var(--mid-grey);
 
         &_grid {
-          border-bottom: solid 1px var(--dark-grey);
+          border-bottom: solid 1px var(--mid-grey);
 
           p {
             order: 1;
