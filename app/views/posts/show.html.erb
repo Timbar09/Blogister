@@ -1,6 +1,5 @@
 <%= content_for :title, "#{truncate(@post.title.capitalize, length: 20)} | " %>
 
-<%# show button only if the current user is the author of the post %>
 <% if current_user == @user %>
   <div class='post_actions-p'>
     <%= render 'shared/button', btnName: 'New post +', btnClass: 'btn btn_cta btn_cta_new', btnPath: new_user_post_path(@user) %>
@@ -8,20 +7,20 @@
 <% end %>
 
 <div class='post_details'>
-  <div class='post_details_header'>
+  <header class='post_details_header'>
     <h1>
       <%= link_to @post.title.capitalize, user_post_path(@user, @post), class: 'post_details_title' %>
       <span>by <%= link_to @user.name, user_path(@user), class: 'post_details_header_author' %></span>
     </h1>
 
-    <div>
+    <div class='post_details_header_grid'>
       <% if can? :destroy, @post %>
         <%= render 'shared/delete_btn', path: user_post_path(@user, @post) %>
       <% end %>
       
       <p class='post_card_counters'>Comments: <%= @post.comments_counter %> | Likes: <%= @post.likes_counter %></p>
     </div>
-  </div>
+  </header>
 
   <div class='post_details_body'>
     <p class='post_details_text'><%= @post.text %></p>

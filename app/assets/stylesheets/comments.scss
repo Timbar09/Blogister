@@ -3,9 +3,9 @@
     padding: 1rem;
     background-color: var(--light-grey);
     border-radius: 0 0 0.25rem 0.25rem;
-    border-right: solid 1px var(--dark-grey);
-    border-left: solid 1px var(--dark-grey);
-    border-bottom: solid 1px var(--dark-grey);
+    border-right: solid 1px var(--mid-grey);
+    border-left: solid 1px var(--mid-grey);
+    border-bottom: solid 1px var(--mid-grey);
 
     &_item {
       &:not(:last-child) {

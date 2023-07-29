@@ -32,6 +32,7 @@ body {
   font-family: 'Rubik', 'Roboto', sans-serif;
   background-color: var(--very-light-grey);
   color: var(--dark-grey);
+  min-width: 320px;
 
   > div {
     margin-top: 5rem;
