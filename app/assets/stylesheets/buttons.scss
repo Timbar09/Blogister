@@ -1,5 +1,8 @@
 .btn {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  width: max-content;
   border-radius: 0.25rem;
   font-size: 0.85rem;
   font-weight: 500;
@@ -8,6 +11,10 @@
   color: inherit;
   background-color: transparent;
   transition: translate 150ms ease-in-out, background-color 150ms ease-in-out;
+
+  i {
+    font-size: 1.15rem;
+  }
 
   &_cta {
     --hover: var(--dark-grey);

@@ -1,1 +1,4 @@
-<%= link_to btnName, btnPath, class: btnClass %>
+<%= link_to btnPath, class: btnClass do %>
+  <span><%= btnName %></span>
+  <i class='material-icons'><%= iconName %></i>
+<% end %>

@@ -62,8 +62,7 @@
     margin-top: 1rem;
     padding: 1rem;
     background-color: var(--white);
-    border-radius: 0.25rem;
-    border: solid 1px var(--light-grey);
+    border-top: solid 1px var(--light-grey);
 
     li {
       &:not(:last-child) {

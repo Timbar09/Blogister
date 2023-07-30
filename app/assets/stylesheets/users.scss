@@ -68,7 +68,7 @@
 
       > div {
         padding-bottom: 0.5rem;
-        border-bottom: solid 1px var(--grey);
+        border-bottom: solid 1px var(--dark-grey);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -82,7 +82,7 @@
       p {
         margin: 0;
         padding: 0.5rem 0 0;
-        color: var(--grey);
+        color: var(--mid-grey);
       }
     }
   }

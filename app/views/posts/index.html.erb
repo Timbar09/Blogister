@@ -4,7 +4,7 @@
 
 <% if current_user == @user %>
   <div class='post_actions'>
-    <%= render 'shared/button', btnName: 'New post +', btnClass: 'btn btn_cta btn_cta_new', btnPath: new_user_post_path(@user) %>
+    <%= render 'shared/button', btnName: 'New post', btnClass: 'btn btn_cta btn_cta_new', btnPath: new_user_post_path(@user), iconName: 'add' %>
   </div>
 <% end %>
 
