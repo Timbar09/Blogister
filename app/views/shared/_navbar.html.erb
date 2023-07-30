@@ -12,11 +12,11 @@
   <ul class="nav_links">
     <% if user_signed_in? %>
       <li class="nav_item">
-        <%= link_to "Users#{'(' + User.count.to_s + ')' if User.count > 0}", users_path, class: "nav_link" %>
+        <%= link_to "Users#{'(' + User.count.to_s + ')' if User.count > 0}", users_path, class: "nav_link #{'active' if current_page?(users_path)}" %>
       </li>
 
       <li class="nav_item">
-        <%= link_to "My Posts", user_posts_path(current_user), class: "nav_link" %>
+        <%= link_to "My Posts", user_posts_path(current_user), class: "nav_link #{'active' if current_page?(user_posts_path(current_user))}" %>
       </li>
 
       <li class="nav_item">

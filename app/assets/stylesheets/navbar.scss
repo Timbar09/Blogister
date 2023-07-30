@@ -20,14 +20,18 @@
     display: inline-block;
     padding: 1.25rem 0.5rem;
     border-bottom: 2px solid transparent;
-    transition:
-      color 150ms ease-in-out,
-      background-color 150ms ease-in-out,
+    transition: color 150ms ease-in-out, background-color 150ms ease-in-out,
       border-bottom 150ms ease-in-out;
 
     &:hover {
       color: var(--white);
       background-color: rgba(255, 255, 255, 0.05);
+      border-bottom: 2px solid var(--white);
+    }
+
+    &.active {
+      color: var(--white);
+      background-color: rgba(255, 255, 255, 0.1);
       border-bottom: 2px solid var(--white);
     }
   }
