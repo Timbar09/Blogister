@@ -6,13 +6,8 @@
 
   <%= form_with model: model, url: user_post_likes_path(user, post), class: 'like_form', local: true do |f| %>
     <%= button_tag(type: 'submit', class: "interaction_btn #{'liked' if liked}") do %>
-      <% if liked %>
-        <%= content_tag(:i, 'favorite', class: 'material-icons interaction_btn_icon') %>
-        <%= content_tag(:span, 'Liked', class: 'interaction_btn_text') %>
-      <% else %>
-        <%= content_tag(:i, 'favorite', class: 'material-icons interaction_btn_icon') %>
-        <%= content_tag(:span, 'Like', class: 'interaction_btn_text') %>
-      <% end %>
+      <%= content_tag(:i, 'favorite', class: 'material-icons interaction_btn_icon') %>
+      <%= content_tag(:span, "#{ liked ? 'Liked' : 'Like' }", class: 'interaction_btn_text') %>
     <% end %>
   <% end %>
 </div>
