@@ -20,7 +20,7 @@
       </li>
 
       <li class="nav_item">
-        <%= link_to "New Post", new_user_post_path(current_user), class: "nav_link" %>
+        <%= link_to "New Post", new_user_post_path(current_user), class: "nav_link #{'active' if current_page?(new_user_post_path(current_user))}" %>
       </li>
 
       <li class="nav_split"></li>
