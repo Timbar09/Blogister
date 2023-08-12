@@ -1,4 +1,4 @@
-# Blog App
+# Blogister
 
 <a name="readme-top"></a>
 
@@ -20,7 +20,7 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 Blog App <a name="about-project"></a>
+# 📖 Blogister <a name="about-project"></a>
 
 > This is a fully functional web appliction that showcases a list of posts where users can read and interact with them by adding comments and liking posts. It is an ideal platform for bloggers who want to share their thoughts, ideas, and experiences with their readers.
 
@@ -83,7 +83,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone https://github.com/Timbar09/Blog_App-Ruby.git
+  git clone https://github.com/Timbar09/Blogister.git
 ```
 
 ### Prerequisites
@@ -135,7 +135,7 @@ To run the project, execute the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Timbar09/Blog_App-Rails/issues).
+Feel free to check the [issues page](https://github.com/Timbar09/Blogister/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
