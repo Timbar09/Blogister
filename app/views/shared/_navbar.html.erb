@@ -7,7 +7,7 @@
 <% end %>
 
 <nav class="nav">
-  <%= link_to "Blog App", root_path, class: "nav_logo" %>
+  <%= link_to "Blogister", root_path, class: "nav_logo" %>
 
   <ul class="nav_links">
     <% if user_signed_in? %>
@@ -36,13 +36,13 @@
       </li>
     <% else %>
       <li class="nav_item">
-        <%= link_to "Sign In", new_user_session_path, class: "nav_link" %>
+        <%= link_to "Sign In", new_user_session_path, class: "nav_link #{'active' if current_page?(new_user_session_path)}" %>
       </li>
 
       <li class="nav_split"></li>
 
       <li class="nav_item">
-        <%= link_to "Sign Up", new_user_registration_path, class: "nav_link" %>
+        <%= link_to "Sign Up", new_user_registration_path, class: "nav_link #{'active' if current_page?(new_user_registration_path)}" %>
       </li>
     <% end %>
   </ul>
