@@ -1,7 +1,7 @@
 <div class='interaction'>
   <%= link_to new_user_post_comment_path(user, post), class: 'interaction_btn' do %>
     <i class="material-icons interaction_btn_icon">comment</i>
-    <span class='interaction_btn_text'>Comment</span>
+    <span class='interaction_btn_text' title='Add comment'>Comment</span>
   <% end %>
 
   <%= form_with model: model, url: user_post_likes_path(user, post), class: 'like_form', local: true do |f| %>
